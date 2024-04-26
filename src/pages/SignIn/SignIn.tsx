@@ -1,6 +1,6 @@
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
-import { Navigate } from 'react-router-dom';
+import { Link, Navigate } from 'react-router-dom';
 import { z } from "zod"
 import axios from 'axios';
 import { Button } from "@/components/ui/button"
@@ -89,6 +89,7 @@ export default function SignIn() {
           <Button className="mt-2 bg-blue-600 hover:bg-blue-800" type="submit">Entrar</Button>
         </form>
       </Form>
+      <div><Link to="/signup">Cadastrar</Link></div>
     </div>
   )
 }

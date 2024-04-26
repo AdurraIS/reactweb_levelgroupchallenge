@@ -3,6 +3,7 @@ import SideBar from "./components/MenuSideBar/SideBar";
 import Dashboard from "./pages/Dashboard/Dashboard";
 import SignIn from "./pages/SignIn/SignIn"
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import SignUp from "./pages/SignUp/SignUp";
 function App() {
 
 
@@ -15,6 +16,7 @@ function App() {
           <Route path="/signin" element={<SignIn/>}/>
           <Route path="/" element={<Dashboard/>}/>
           <Route path="/compras" element={<Compras/>}/>
+          <Route path="/signup" element={<SignUp/>}/>
         </Routes>
       </div>
     </Router>
