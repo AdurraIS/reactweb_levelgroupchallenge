@@ -59,7 +59,7 @@ export default function SignIn() {
     <div className="m-auto h-screen flex flex-col justify-center items-center">
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="border rounded-lg  p-7 
-        flex flex-col gap-2 w-80 shadow-lg shadow-gray-300">
+        flex flex-col gap-2 w-80 bg-white shadow-lg shadow-gray-300">
           <FormField
             control={form.control}
             name="email"
@@ -89,7 +89,7 @@ export default function SignIn() {
           <Button className="mt-2 bg-blue-600 hover:bg-blue-800" type="submit">Entrar</Button>
         </form>
       </Form>
-      <div><Link to="/signup">Cadastrar</Link></div>
+      <div className="text-link"><Link to="/signup">Cadastrar</Link></div>
     </div>
   )
 }
