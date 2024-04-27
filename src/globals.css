@@ -71,6 +71,9 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background bg-gray-300 bg-opacity-90 text-foreground;
+  }
+  .text-link{
+    @apply mt-3 text-blue-600 hover:text-blue-900 border-b-[1px] border-gray-300 hover:border-blue-900  hover:scale-105 transition-all duration-200;
   }
 }
