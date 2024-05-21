@@ -10,7 +10,7 @@ function App() {
 
   return (
     <Router>
-      <div className='flex flex-row'>
+      <div className='flex flex-row max-w-screen'>
       <SideBar/>
         <Routes>
           <Route path="/signin" element={<SignIn/>}/>

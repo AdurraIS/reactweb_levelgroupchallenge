@@ -29,19 +29,17 @@ import { ChevronsUpDown } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { useState } from "react";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { DialogClose } from "@radix-ui/react-dialog";
 
+
 const types = [
     { label: "Admin", value: "ADMIN" },
     { label: "Usuario", value: "USER" },
 ];
-export default function UserModal({ onSubmit }) {
-
-    const [usuarios, setUsuarios] = useState([{}]);
+export default function UserModal({ onSubmit }:any) {
 
     const formSchema = z.object({
         name: z.string().min(5, {
@@ -68,7 +66,7 @@ export default function UserModal({ onSubmit }) {
         },
     });
 
-    function submitUsers(values) {
+    function submitUsers(values: z.infer<typeof formSchema>) {
         onSubmit(values);
         formUser.reset();
     }
@@ -134,7 +132,7 @@ export default function UserModal({ onSubmit }) {
                             control={formUser.control}
                             name="role"
                             render={({ field }) => (
-                                <FormItem className="flex flex-col">
+                                <FormItem className="flex flex-col mt-4">
                                     <FormLabel>Tipo*</FormLabel>
                                     <Popover>
                                         <PopoverTrigger asChild>

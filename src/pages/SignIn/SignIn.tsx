@@ -48,6 +48,7 @@ export default function SignIn() {
         console.log(response)
         localStorage.setItem('token', response.data.token);
         localStorage.setItem('nomeUsuario', response.data.nomeUsuario);
+        localStorage.setItem('id', response.data.id);
       } catch (error) {
         console.error('Erro ao fazer login:', error);
       }
