@@ -29,21 +29,18 @@ const types = [
   { label: "Ambos", value: 3 },
 ];
 
-export default function Step1({ onSubmit }) {
+export default function Step1({ onSubmit }:any) {
 
   const formSchema = z.object({
-    name: z.string().min(5, {
-      message: "Nome da empresa deve ter mais que 5 dígitos.",
-    }),
-    email: z.string().min(5, {
-      message: "E-mail deve ter mais que 5 dígitos.",
-    }),
-    cnpj: z.string().min(14, {
-      message: "CNPJ deve ter mais que 14 dígitos.",
-    }),
-    type: z.number().min(1, {
-      message: "Deve selecionar uma opção.",
-    }),
+    name: z.string()
+        .min(5, { message: "Nome da empresa deve ter mais que 5 dígitos.",}),
+    email: z.string()
+        .min(5, { message: "E-mail deve ter mais que 5 dígitos.",}),
+    cnpj: z.string()
+        .min(14, { message: "Seu CNPJ tem menos de 14 dígitos.",})
+        .max(14, { message: "Seu CNPJ tem mais de 14 dígitos.",}),
+    type: z.number()
+    .min(1, { message: "Deve selecionar uma opção.",}),
   });
 
   const empresaForm = useForm({
@@ -57,7 +54,7 @@ export default function Step1({ onSubmit }) {
   });
 
   function submitEmpresa(values: z.infer<typeof formSchema>) {
-    onSubmit("empresa", values);
+    onSubmit(values);
   }
 
   return (
